@@ -38,35 +38,38 @@ pip install opencv-python numpy
 
 ⚙️ Configuration & Setup
 ⚠️ Important: Before running the script, you must update the file paths in lazers.py to match your local directory structure.
-
+```
 1. Clone the Repository
 '''bash
 git clone https://github.com/yourusername/repo-name.git
 cd repo-name
-
+```
 2. Update Paths in lazers.py
 Open the script and locate the following lines to update them with your absolute paths:
 
 YOLOv5 Directory:
+```
 sys.path.append(r'C:\Path\To\Your\yolov5')
-
+```
 Model Weights (.pt file):
+```
 model = attempt_load(r'C:\Path\To\Your\best.pt', device='cuda')
-
+```
 Calibration Data (.xml file):
+```
 fs = cv2.FileStorage(r'C:\Path\To\Your\stereo_calibration_data1.xml', cv2.FILE_STORAGE_READ)
-
+```
 3. Camera Indexing
 # Check your camera ports. The script uses index 0 and 2 by default. Change them if necessary:
-'''python
+```
 cap_left = cv2.VideoCapture(0)
 cap_right = cv2.VideoCapture(2)
-
+```
 🚀 Usage
 # Once configured, run the simulation:
-''' bash
+```
 python lazers.py
-
+```
 # Operational Logic
 Detection: Frames are captured, undistorted, and passed to the YOLO model.
 
@@ -97,6 +100,5 @@ Push to the branch (git push origin feature/AmazingFeature).
 
 Open a Pull Request.
 
-📝 License
-Distributed under the MIT License. See LICENSE for more information.
+
 
